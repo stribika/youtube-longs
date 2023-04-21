@@ -1,0 +1,22 @@
+{
+	"manifest_version": 2,
+	"name": "YouTube Longs",
+	"version": "2023.04",
+	"description": "Plays YouTube Shorts in the normal player.",
+	"content_scripts": [
+		{
+			"matches": [ "https://www.youtube.com/shorts/*" ],
+			"js": [ "redirect.js" ],
+			"run_at": "document_start"
+		},
+		{
+			"matches": [ "https://www.youtube.com/*" ],
+			"js": [ "observe.js" ],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [ "https://www.youtube.com/*" ],
+	"icons": {
+		"128": "icon128.png"
+	}
+}
